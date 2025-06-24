@@ -1,0 +1,408 @@
+/* Custom CSS for ComplaintHub */
+
+:root {
+  --primary-color: #6c63ff;
+  --secondary-color: #f8f9fa;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --info-color: #17a2b8;
+  --dark-color: #343a40;
+  --light-color: #f8f9fa;
+}
+
+/* Global Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Page Management */
+.page {
+  min-height: calc(100vh - 200px);
+}
+
+/* Custom Background Gradients */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #5a52d5 100%);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(135deg, var(--success-color) 0%, #20c997 100%);
+}
+
+/* Navigation */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+/* Hero Section */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+/* Feature Icons */
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* Cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Buttons */
+.btn {
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #5a52d5;
+  border-color: #5a52d5;
+  transform: translateY(-2px);
+}
+
+/* Forms */
+.form-control {
+  border-radius: 0.5rem;
+  border: 2px solid #e9ecef;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+}
+
+/* Status Badges */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.badge-pending {
+  background-color: var(--warning-color);
+  color: #000;
+}
+
+.badge-resolved {
+  background-color: var(--success-color);
+}
+
+/* Complaint Cards */
+.complaint-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  cursor: pointer;
+}
+
+.complaint-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.1);
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Alert Animations */
+.alert {
+  animation: slideInDown 0.3s ease;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Image Upload Area */
+.image-upload-area {
+  border: 2px dashed #dee2e6;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.image-upload-area:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(108, 99, 255, 0.05);
+}
+
+.image-upload-area.dragover {
+  border-color: var(--primary-color);
+  background-color: rgba(108, 99, 255, 0.1);
+}
+
+/* Modal Styles */
+.modal-content {
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal-header {
+  border-bottom: 1px solid #e9ecef;
+  padding: 1.5rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: 1px solid #e9ecef;
+  padding: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 60vh;
+    text-align: center;
+  }
+
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Admin Dashboard Specific */
+.admin-header {
+  background: linear-gradient(135deg, var(--dark-color) 0%, #495057 100%);
+}
+
+.stat-card {
+  border-left: 4px solid var(--primary-color);
+}
+
+.stat-card.success {
+  border-left-color: var(--success-color);
+}
+
+.stat-card.warning {
+  border-left-color: var(--warning-color);
+}
+
+.stat-card.info {
+  border-left-color: var(--info-color);
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e9ecef;
+}
+
+.timeline .d-flex:last-child::before {
+  display: none;
+}
+
+/* Utility Classes */
+.text-primary-custom {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
+}
+
+.border-primary-custom {
+  border-color: var(--primary-color) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5a52d5;
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Success States */
+.success-state {
+  border-color: var(--success-color) !important;
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+/* Error States */
+.error-state {
+  border-color: var(--danger-color) !important;
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+}
+
+/* Focus States */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+}
+
+/* Button Loading States */
+.btn-loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Fade Transitions */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .navbar,
+  .btn,
+  .modal,
+  footer {
+    display: none !important;
+  }
+
+  .page {
+    display: block !important;
+  }
+
+  .card {
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+}
